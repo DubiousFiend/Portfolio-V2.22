@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    background-color: #0B0909;
+}
+
+h1, h2, h3, h4, li {
+    color: #FF0000; /* Red color for headings and list items */
+}
+
+h2, h3 {
+    text-decoration: underline; /* Underline for h2 and h3 */
+}
+
+/* Default link color (yellow) */
+a {
+    color: yellow; /* This sets the default color for links */
+    text-decoration: none; /* Optionally, remove underline from links */
+}
+
+/* Hover color for links (red) */
+a:hover {
+    color: red; /* Change link color to red on hover */
+}
+
+/* Ensure the correct font family is applied */
+* {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.page-background{
+	background-image: url('background-image.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+.menu-container {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 100px;
+  float:left;
+}
+.hex-wrapper {
+  display: inline-block;
+}
+.hex-row {
+  clear: left;
+}
+.shift {
+    margin-left: 98px;
+}
+.hexagon {
+  float: left;
+  position: relative;
+  margin: 30px 3px;
+  width: 190px;
+  height: 110px;
+  background-color: black;
+  background-position: center center;
+  z-index: 1;
+  /* Text styling */
+  line-height: 110px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #000;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  transition: color 500ms ease, text-shadow 500ms ease, background-color 500ms ease, -webkit-transform 1s ease-in-out;
+}
+.hexagon:hover {
+  color: #fff;
+  text-shadow: 0 0 10px white;
+  background-color: #FF0000;
+}
+.hexagon .face1,
+.hexagon .face2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: inherit;
+  z-index: -1;
+  /* Keeps borders smooth in webkit */
+  backface-visibility: hidden;
+}
+.hexagon .face1:before,
+.hexagon .face2:before {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: inherit;
+}
+.hexagon .face1 { transform: rotate(60deg); }
+.hexagon .face1:before {
+  left: 0;
+  transform-origin: left top;
+  transform: rotate(-60deg) translate(-110px, 0);
+}
+.hexagon .face2 { transform: rotate(-60deg); }
+.hexagon .face2:before {
+  right: 0;
+  transform-origin: right top;
+  transform: rotate(60deg) translate(110px, 0);
+}
+
